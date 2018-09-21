@@ -1,0 +1,111 @@
+<html>
+<head>
+<style>
+</style>
+<script>
+</script>
+</head>
+<body>
+<div id="warp">
+  <div id="ntpd">
+        <div class="ntpd-head">
+            <h1 class="title">My Todo list</h1>
+          <a href="#add" class="add" title="Show completed todo">Add</a>
+          <a href="#close" class="delete"  title="Close completed todo">Delete</a>
+        </div>
+        <div id="tasks">
+          <ul>
+          <li>
+					  <input type="checkbox" id="check-1" >
+            <label for="check-1">Shop</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-2">
+					  <label for="check-2">Practice</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-3"checked="checked">
+				  	<label for="check-3">Sleep</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-4"checked="checked">
+				  	<label for="check-4">Enjoy life</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-5" checked="checked">
+				  	<label for="check-5">Do something</label>
+				  </li>
+            <li>
+					  <input type="checkbox" id="check-6" checked="checked">
+            <label for="check-6">Dev</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-7">
+					  <label for="check-7">Produce</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-8">
+				  	<label for="check-8">Save data</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-9">
+				  	<label for="check-9">Enjoy run</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-10">
+				  	<label for="check-10">Do the best</label>
+				  </li>
+            <li>
+					  <input type="checkbox" id="check-11" >
+            <label for="check-11">Rock</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-12">
+					  <label for="check-12">Prepare</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-13">
+				  	<label for="check-13">Smurf</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-14">
+				  	<label for="check-14">Life</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-15">
+				  	<label for="check-15">Something</label>
+				  </li>
+            <li>
+					  <input type="checkbox" id="check-16">
+            <label for="check-16">Start</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-17">
+					  <label for="check-17">Learn</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-18">
+				  	<label for="check-18">Jump</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-19">
+				  	<label for="check-19">Create</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-20" >
+				  	<label for="check-20">Do This</label>
+				  </li>
+          </ul>
+        </div>
+      </div>
+      <span class="ntpd-sh"></span>
+   </div>
+
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
+
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</body>
+</htmls>

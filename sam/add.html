@@ -1,0 +1,351 @@
+<html>
+<head>
+<style>
+html,
+body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;background: #bfbfbf;}
+
+#warp {
+    position: absolute;
+    width: 280px;
+    height: 352px;
+    top: 50%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -140px;
+    }
+
+#ntpd {
+    width: 200px;
+    height: 240px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    margin-top: 0px;
+    background: #f9f9f9;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+#ntpd:before,
+#ntpd:after {
+    content: "";
+    border-radius: 1px;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.55);
+    }
+
+#ntpd:before {
+    top: 4px;
+    z-index: -10;
+    width: 196px;
+    left: 2px;
+    border: 10px solid #f4f4f4;
+    }
+
+some_nowhitespace { nowhitespace: afterproperty }
+
+#ntpd:after {
+    top: 7px;
+    z-index: -20;
+    width: 192px;
+    left: 4px;
+    border: 10px solid #e5e5e5;
+    }
+
+.ntpd-head {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 25px;
+    margin: 0 auto;
+    text-align: center;
+    top: 0px;
+    background: linear-gradient(#3a424c 1.66%, #242a31 100%);
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.70);
+    z-index: 10;
+    }
+
+    .ntpd-head .title {
+        font-size: 13px;
+        color: #ececec;
+        font-weight: bolder;
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, .75);
+        line-height: 22px;
+        }
+
+    .ntpd-head .add,
+    .ntpd-head .delete {
+        top: 2.5px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 3px;
+        box-shadow: 0 0 1px rgba(0,0,0,0.75)inset, 0px 1px 0px rgba(255,255,255,0.5) inset;
+        }
+
+    .ntpd-head .add {
+        left: 2.5px;
+        position: absolute;
+        display: block;
+        margin: 0;
+        text-indent: -9999px;
+        }
+
+    .ntpd-head .add:active { background: rgba(255,255,255,0.5) }
+
+    .ntpd-head .delete {
+        position: absolute;
+        display: block;
+        right: 2.5px;
+        margin: 0;
+        text-indent: -9999px;
+        }
+
+    .ntpd-head .delete:active { background: rgba(255,255,255,0.5) }
+
+    .ntpd-head .add:before,
+    .ntpd-head .add:after,
+    .ntpd-head .delete:before,
+    .ntpd-head .delete:after {
+        content: "";
+        position: absolute;
+        border-radius: 1px;
+        background: white;
+        }
+
+    .ntpd-head .add:active:before,
+    .ntpd-head .add:active:after,
+    .ntpd-head .delete:active:before,
+    .ntpd-head .delete:active:after { background: black }
+
+    .ntpd-head .add:before,
+    .ntpd-head .delete:before {
+        width: 12px;
+        height: 4px;
+        top: 8px;
+        left: 4px;
+        }
+
+    .ntpd-head .add:after,
+    .ntpd-head .delete:after {
+        width: 4px;
+        height: 12px;
+        top: 4px;
+        left: 8px;
+        }
+
+    .ntpd-head .delete:before,
+    .ntpd-head .delete:after {transform: rotate(-45deg);}
+
+#ntpd #tasks {
+    position: relative;
+    display: block;
+    width: 196px;
+    height: 215px;
+    overflow-y: scroll;
+    margin: 0 auto;
+    top: 0px;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #fff;
+    }
+
+    #ntpd #tasks ul {
+        padding: 0px;
+        margin: 0px;
+        background-image: linear-gradient(0deg, transparent 24px, #abced4 24px, #abced4 25px, transparent 25px);
+        background-size: 100% auto;
+        background-position: 0 0;
+        background-attachment: scroll;
+        }
+#tasks::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border: none;
+    background: transparent;
+    }
+#tasks::-webkit-scrollbar-track-piece {
+    border: none;
+    position: absolute;
+    padding: 0;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0.07);
+    border-radius: 30px;
+    }
+
+#tasks::-webkit-scrollbar-thumb:vertical {
+    background-color: rgba(0,0,0,0.18);
+    border-radius: 30px;
+    border: none;
+    }
+
+#tasks::-webkit-scrollbar-thumb:horizontal {
+    background-color: rgba(0,0,0,0.18);
+    border-radius: 30px;
+    border: none;
+    }
+li{line-height:10px;padding-bottom:8px;}
+li:nth-child(odd){background: rgba(0,0,50,.1);}
+label{
+    padding: 0px 0px 11px 0px;
+    display: block;
+    position: relative;
+    top: 10px;
+    bottom: 2px;
+    text-indent: 35px;
+    }
+input[type="checkbox"]{display:none}
+input[type="checkbox"]+ label{ color: #999 }
+input[type="checkbox"]:checked + label::before,
+input[type="checkbox"]+ label::before{
+    display: block;
+    position: absolute;
+    left: -28px;
+    top: -1px;
+    font-size: 12px;
+    }
+input[type="checkbox"]+ label::before{
+    content: '✘';
+    width: 12px;
+    height: 12px;
+    color: #dd2424;
+    }
+
+input[type="checkbox"]:checked + label{color: #666;text-decoration: line-through;}
+input[type="checkbox"]:checked + label::before{
+    content: '✔';
+    width: 14px;
+    height: 14px;
+    overflow: visible;
+    color: #26aa26;
+    }
+input[type="checkbox"]:checked + label:hover,
+input[type="checkbox"] + label:hover{ color: #222 }
+.ntpd-sh {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: 0;
+    width: 192px;
+    height: 83px;
+    background: linear-gradient(rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0) 100%);
+    bottom: 19px;
+    left: 43px;
+    }
+</style>
+<script>
+$("a.delete").click(function(){
+    $('input:checked').parent().hide();
+});
+$("a.add").click(function(){
+    $('input:checked').parent().show();
+});
+</script>
+</head>
+<body>
+<div id="warp">
+  <div id="ntpd">
+        <div class="ntpd-head">
+            <h1 class="title">My Todo list</h1>
+          <a href="#add" class="add" title="Show completed todo">Add</a>
+          <a href="#close" class="delete"  title="Close completed todo">Delete</a>
+        </div>
+        <div id="tasks">
+          <ul>
+          <li>
+					  <input type="checkbox" id="check-1" >
+            <label for="check-1">Shop</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-2">
+					  <label for="check-2">Practice</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-3"checked="checked">
+				  	<label for="check-3">Sleep</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-4"checked="checked">
+				  	<label for="check-4">Enjoy life</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-5" checked="checked">
+				  	<label for="check-5">Do something</label>
+				  </li>
+            <li>
+					  <input type="checkbox" id="check-6" checked="checked">
+            <label for="check-6">Dev</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-7">
+					  <label for="check-7">Produce</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-8">
+				  	<label for="check-8">Save data</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-9">
+				  	<label for="check-9">Enjoy run</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-10">
+				  	<label for="check-10">Do the best</label>
+				  </li>
+            <li>
+					  <input type="checkbox" id="check-11" >
+            <label for="check-11">Rock</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-12">
+					  <label for="check-12">Prepare</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-13">
+				  	<label for="check-13">Smurf</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-14">
+				  	<label for="check-14">Life</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-15">
+				  	<label for="check-15">Something</label>
+				  </li>
+            <li>
+					  <input type="checkbox" id="check-16">
+            <label for="check-16">Start</label>
+				  </li>
+				  <li>
+					  <input type="checkbox" id="check-17">
+					  <label for="check-17">Learn</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-18">
+				  	<label for="check-18">Jump</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-19">
+				  	<label for="check-19">Create</label>
+				  </li>
+				  <li>
+				  	<input type="checkbox" id="check-20" >
+				  	<label for="check-20">Do This</label>
+				  </li>
+          </ul>
+        </div>
+      </div>
+      <span class="ntpd-sh"></span>
+   </div>
+
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
+
+<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</body>
+</htmls>

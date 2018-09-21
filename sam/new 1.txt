@@ -1,0 +1,7 @@
+<html>
+<head>
+</head>
+<body>
+<input type="text" placeholder="write somethong here">
+<button id="b1" >ADD</button>
+</body>
